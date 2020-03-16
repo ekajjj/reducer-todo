@@ -1,3 +1,5 @@
+//import moment from 'moment';
+import cuid from 'cuid';
 
 export const initialState = {
     todos: []
@@ -11,7 +13,7 @@ export const reducer = (state, action) => {
                 ...state,
                 todos: [
                     ...state.todos,
-                    { item: action.text, id: Date.now(), completed: false },
+                    { item: action.text, id: cuid(), completed: false },
                 ],
             };
         case 'TOGGLE_COMPLETE':
